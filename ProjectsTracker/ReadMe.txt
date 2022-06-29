@@ -1,0 +1,1 @@
+﻿Don't forget write Database connection string in the "appsettings.jason" file.

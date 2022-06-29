@@ -6,8 +6,6 @@ public class ApplicationContext : DbContext {
     public ApplicationContext(DbContextOptions options): base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
-        modelBuilder.Entity<Project>()
-            .HasData(new Project { Id = 1, Name = "First" });
         modelBuilder
             .Entity<Employee>()
             .HasMany(e => e.Projects)

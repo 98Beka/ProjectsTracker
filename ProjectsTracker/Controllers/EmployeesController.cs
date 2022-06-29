@@ -52,6 +52,8 @@ namespace ProjectsTracker.Controllers {
             if (storedProject == null)
                 return NotFound();
             storedProject.Name = employee.Name;
+            storedProject.LastName = employee.LastName;
+            storedProject.MidleName = employee.MidleName;
             await db.SaveChangesAsync();
             return Ok(storedProject);
         }

@@ -15,7 +15,10 @@ namespace ProjectsTracker.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MidleName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -32,7 +35,8 @@ namespace ProjectsTracker.Migrations
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PerformerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TeamLeadId = table.Column<int>(type: "int", nullable: true),
-                    Start = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Start = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Finish = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Priority = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -68,11 +72,6 @@ namespace ProjectsTracker.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.InsertData(
-                table: "Projects",
-                columns: new[] { "Id", "CustomerName", "Name", "PerformerName", "Priority", "Start", "TeamLeadId" },
-                values: new object[] { 1, null, "First", null, null, null, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_EmployeeProject_ProjectsId",

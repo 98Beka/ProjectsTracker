@@ -71,6 +71,19 @@ namespace ProjectsTracker.Controllers {
             return Ok();
         }
 
+        [HttpGet("appointTeamlead")]
+        public async Task<IActionResult> AppointTeamlead(int projectId, int employeeId) {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var storedProject = await db.Projects.Include(p => p.Employees).FirstOrDefaultAsync(p => p.Id == projectId);
+            var emplyee = await db.Employees.FirstOrDefaultAsync(e => e.Id == employeeId);
+            if (emplyee == null || storedProject == null)
+                return NotFound();
+            storedProject.TeamLead = emplyee;
+            await db.SaveChangesAsync();
+            return Ok();
+        }
+
         [HttpGet("removeEmployee")]
         public async Task<IActionResult> RemoveEmployee(int projectId, int employeeId) {
             if (!ModelState.IsValid)
