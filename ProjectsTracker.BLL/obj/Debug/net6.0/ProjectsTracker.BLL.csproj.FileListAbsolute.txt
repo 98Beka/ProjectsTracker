@@ -1,0 +1,15 @@
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\bin\Debug\net6.0\ProjectsTracker.BLL.deps.json
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\bin\Debug\net6.0\ProjectsTracker.BLL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\bin\Debug\net6.0\ProjectsTracker.BLL.pdb
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\bin\Debug\net6.0\ProjectsTracker.DAL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\bin\Debug\net6.0\ProjectsTracker.DAL.pdb
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.csproj.AssemblyReference.cache
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.AssemblyInfoInputs.cache
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.AssemblyInfo.cs
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.csproj.CoreCompileInputs.cache
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.csproj.CopyComplete
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\refint\ProjectsTracker.BLL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ProjectsTracker.BLL.pdb
+C:\asp_projects\ProjectsTracker\ProjectsTracker.BLL\obj\Debug\net6.0\ref\ProjectsTracker.BLL.dll

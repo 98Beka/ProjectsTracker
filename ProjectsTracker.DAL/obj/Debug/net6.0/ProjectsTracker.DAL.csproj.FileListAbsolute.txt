@@ -1,0 +1,14 @@
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\bin\Debug\net6.0\ProjectsTracker.DAL.deps.json
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\bin\Debug\net6.0\ProjectsTracker.DAL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\bin\Debug\net6.0\ProjectsTracker.DAL.pdb
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.csproj.AssemblyReference.cache
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.AssemblyInfoInputs.cache
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.AssemblyInfo.cs
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.csproj.CoreCompileInputs.cache
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\refint\ProjectsTracker.DAL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.pdb
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ref\ProjectsTracker.DAL.dll
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\bin\Debug\net6.0\ProjectsTracker.DAL.runtimeconfig.json
+C:\asp_projects\ProjectsTracker\ProjectsTracker.DAL\obj\Debug\net6.0\ProjectsTracker.DAL.genruntimeconfig.cache
