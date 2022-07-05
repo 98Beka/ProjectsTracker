@@ -17,7 +17,7 @@ namespace ProjectsTracker.BLL.BusinessObjects {
             tmp.Sort((x, y) => x.Priority.Value.CompareTo(y.Priority.Value));
 
             for (int i = 0; i < tmp.Count; i++) {
-                if (tmp[i].Priority == 0) {
+                if (tmp[0].Priority == 0) {
                     var proj = tmp[0];
                     for (int j = 0; j < tmp.Count - 1; j++)
                         tmp[j] = tmp[j + 1];

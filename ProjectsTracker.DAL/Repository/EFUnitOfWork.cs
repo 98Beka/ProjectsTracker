@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjectsTracker.DAL.Interfaces;
-using ProjectsTracker.Models;
+using ProjectsTracker.DAL.Models;
 
 namespace ProjectsTracker.DAL.Repository {
     public class EFUnitOfWork : IUnitOfWork {
@@ -8,8 +8,11 @@ namespace ProjectsTracker.DAL.Repository {
         private ProjectRepository projectRepository;
         private EmployeeRepository employeeRepository;
 
-        public EFUnitOfWork(ApplicationContext db) {
-            this.db = db;
+        public EFUnitOfWork(string connectionString) {
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+
+            this.db = new ApplicationContext(optionsBuilder.Options);
         }
         public IRepository<Project> Projects {
             get {

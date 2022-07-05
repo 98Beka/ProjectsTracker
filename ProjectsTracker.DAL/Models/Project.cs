@@ -1,4 +1,4 @@
-﻿namespace ProjectsTracker.Models {
+﻿namespace ProjectsTracker.DAL.Models {
     public record Project {
         public int Id { get; set; }
         public string Name { get; set; } = null!;

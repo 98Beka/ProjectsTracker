@@ -5,16 +5,13 @@ using ProjectsTracker.BLL.Infrastructure;
 using ProjectsTracker.BLL.Interfaces;
 using ProjectsTracker.DAL.Interfaces;
 using ProjectsTracker.DAL.Repository;
-using ProjectsTracker.Models;
+using ProjectsTracker.DAL.Models;
 
 namespace ProjectsTracker.BLL.Services {
     public class Service : IService {
         IUnitOfWork Database { get; set; }
         public Service(string connectionString) {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
-            optionsBuilder.UseSqlServer(connectionString);
-            var appContext = new ApplicationContext(optionsBuilder.Options);
-            Database = new EFUnitOfWork(appContext);
+            Database = new EFUnitOfWork(connectionString);
         }
 
         #region Project business logic

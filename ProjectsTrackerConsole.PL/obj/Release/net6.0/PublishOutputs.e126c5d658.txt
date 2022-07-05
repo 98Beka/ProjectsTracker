@@ -1,7 +1,6 @@
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTrackerConsole.PL.exe
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\appsettings.json
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTrackerConsole.PL.dll
-C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTrackerConsole.PL.deps.json
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTrackerConsole.PL.runtimeconfig.json
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTrackerConsole.PL.pdb
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\AutoMapper.dll
@@ -56,3 +55,4 @@ C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\pub
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTracker.DAL.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTracker.BLL.pdb
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTracker.DAL.pdb
+C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\publish\ProjectsTrackerConsole.PL.deps.json

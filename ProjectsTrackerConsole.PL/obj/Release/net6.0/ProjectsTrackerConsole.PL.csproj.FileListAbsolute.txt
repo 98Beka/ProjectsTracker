@@ -6,9 +6,11 @@ C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Pro
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\ProjectsTrackerConsole.PL.pdb
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\AutoMapper.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Humanizer.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\asp_projects\ProjectsTracker\ProjectsTrackerConsole.PL\bin\Release\net6.0\Microsoft.Extensions.Caching.Abstractions.dll

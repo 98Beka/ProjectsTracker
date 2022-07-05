@@ -1,4 +1,4 @@
-﻿using ProjectsTracker.Models;
+﻿using ProjectsTracker.DAL.Models;
 
 namespace ProjectsTracker.BLL.DataTransferObjects {
     public class EmployeeDTO {

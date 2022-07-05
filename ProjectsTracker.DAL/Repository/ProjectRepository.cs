@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjectsTracker.DAL.Interfaces;
-using ProjectsTracker.Models;
+using ProjectsTracker.DAL.Models;
 
 namespace ProjectsTracker.DAL.Repository {
     public class ProjectRepository : IRepository<Project> {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjectsTracker.Models;
+using ProjectsTracker.DAL.Models;
 public class ApplicationContext : DbContext {
     public DbSet<Project> Projects { get; set; } = null!;
     public DbSet<Employee> Employees { get; set; } = null!;

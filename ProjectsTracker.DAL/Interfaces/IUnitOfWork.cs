@@ -1,4 +1,4 @@
-﻿using ProjectsTracker.Models;
+﻿using ProjectsTracker.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

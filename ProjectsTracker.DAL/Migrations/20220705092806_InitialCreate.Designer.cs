@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ProjectsTracker.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220703102759_ProjectsTracker")]
-    partial class ProjectsTracker
+    [Migration("20220705092806_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,7 +38,7 @@ namespace ProjectsTracker.DAL.Migrations
                     b.ToTable("EmployeeProject");
                 });
 
-            modelBuilder.Entity("ProjectsTracker.Models.Employee", b =>
+            modelBuilder.Entity("ProjectsTracker.DAL.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace ProjectsTracker.DAL.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("ProjectsTracker.Models.Project", b =>
+            modelBuilder.Entity("ProjectsTracker.DAL.Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -103,29 +103,29 @@ namespace ProjectsTracker.DAL.Migrations
 
             modelBuilder.Entity("EmployeeProject", b =>
                 {
-                    b.HasOne("ProjectsTracker.Models.Employee", null)
+                    b.HasOne("ProjectsTracker.DAL.Models.Employee", null)
                         .WithMany()
                         .HasForeignKey("EmployeesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjectsTracker.Models.Project", null)
+                    b.HasOne("ProjectsTracker.DAL.Models.Project", null)
                         .WithMany()
                         .HasForeignKey("ProjectsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProjectsTracker.Models.Project", b =>
+            modelBuilder.Entity("ProjectsTracker.DAL.Models.Project", b =>
                 {
-                    b.HasOne("ProjectsTracker.Models.Employee", "TeamLead")
+                    b.HasOne("ProjectsTracker.DAL.Models.Employee", "TeamLead")
                         .WithMany("ProjectsAsLead")
                         .HasForeignKey("TeamLeadId");
 
                     b.Navigation("TeamLead");
                 });
 
-            modelBuilder.Entity("ProjectsTracker.Models.Employee", b =>
+            modelBuilder.Entity("ProjectsTracker.DAL.Models.Employee", b =>
                 {
                     b.Navigation("ProjectsAsLead");
                 });
