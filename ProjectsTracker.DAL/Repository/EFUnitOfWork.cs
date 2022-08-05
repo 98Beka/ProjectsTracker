@@ -10,7 +10,8 @@ namespace ProjectsTracker.DAL.Repository {
 
         public EFUnitOfWork(string connectionString) {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString,
+                x => x.MigrationsAssembly("Kabylan.PL"));
 
             this.db = new ApplicationContext(optionsBuilder.Options);
         }

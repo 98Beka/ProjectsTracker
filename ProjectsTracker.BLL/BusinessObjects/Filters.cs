@@ -3,7 +3,7 @@ using ProjectsTracker.BLL.Interfaces;
 
 namespace ProjectsTracker.BLL.BusinessObjects {
 
-    public class ProjctFilterNone : IProjectFilter {
+    public class ProjectFilterNone : IProjectFilter {
         public List<ProjectDTO> Filtrate(List<ProjectDTO> input) {
             return input;
         }

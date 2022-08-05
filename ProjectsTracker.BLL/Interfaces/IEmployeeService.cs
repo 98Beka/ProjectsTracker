@@ -6,5 +6,7 @@ namespace ProjectsTracker.BLL.Interfaces {
         IEnumerable<EmployeeDTO> GetEmployees();
         Task DeleteEmployeeAsync(int? id);
         Task AddOrEditEmployeeAsync(EmployeeDTO project);
+        Task TieEmployeeProjectAsync(int? projectId, int? employeeId);
+        Task SeparateEmployeeProjectAsync(int? projectId, int? employeeId);
     }
 }

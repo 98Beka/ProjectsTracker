@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectsTracker.DAL", "Proj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectsTracker.BLL", "ProjectsTracker.BLL\ProjectsTracker.BLL.csproj", "{CC70B14A-9164-46D1-8684-6AE803493562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectsTrackerConsole.PL", "ProjectsTrackerConsole.PL\ProjectsTrackerConsole.PL.csproj", "{A5CE4180-60E1-4245-A02E-F8F865DADF26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectsTracker.PL", "ProjectsTracker.PL\ProjectsTracker.PL.csproj", "{BB9D40AD-0489-42CF-A094-E31C429AF326}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{CC70B14A-9164-46D1-8684-6AE803493562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC70B14A-9164-46D1-8684-6AE803493562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC70B14A-9164-46D1-8684-6AE803493562}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5CE4180-60E1-4245-A02E-F8F865DADF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5CE4180-60E1-4245-A02E-F8F865DADF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5CE4180-60E1-4245-A02E-F8F865DADF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5CE4180-60E1-4245-A02E-F8F865DADF26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9D40AD-0489-42CF-A094-E31C429AF326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9D40AD-0489-42CF-A094-E31C429AF326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9D40AD-0489-42CF-A094-E31C429AF326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9D40AD-0489-42CF-A094-E31C429AF326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

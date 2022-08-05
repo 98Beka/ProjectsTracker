@@ -1,0 +1,88 @@
+﻿@page
+@using ProjectsTracker.PL.ViewModels
+@model ProjectsTracker.PL.Pages.IndexModel
+
+
+<div class="row">
+    <div class="col-6 py-3">
+        <div class="d-grid gap-2 overflow-auto" style="max-height: 90vh;">
+
+        <botton class="btn btn-light m-3">Filtr</botton>
+        <form method="post">
+     
+            <div class="editor-label">
+                @Html.ValidationSummary()
+            </div>
+            @if(Model.Projects != null)
+                @foreach(var item in Model.Projects)
+                {
+                        <button name="index" class="btn btn-outline-primary p-3 w-100" asp-page-handler="show" asp-route-id=1>
+                            <div class="row row-cols-1 row-cols-lg-3">
+                                <div class="col">@item?.Name</div>
+                                <div class="col">@item?.Priority</div>
+                                <div class="col">@item?.Start</div>
+                                <div class="col">@item?.Id</div>
+                            </div>
+                        </button>
+                    
+                }
+        </form>
+
+          
+        </div>
+    </div>
+
+    <div class="col-6 py-3 ">
+
+        <form class="row g-3 overflow-auto" method="post" style="max-height: 90vh;">
+            <div class="col-lg-4">
+              <label for="ProjectName" class="form-label">Project Name</label>
+              <input type="text" class="form-control" id="ProjectName" value=@Model?.Project?.Name>
+            </div>
+            <div class="col-lg-4">
+              <label for="CustomerName" class="form-label">Customer Name</label>
+              <input type="text" class="form-control" id="CustomerName" value=@Model.?Project?.CustomerName>
+            </div>
+            <div class="col-lg-4">
+              <label for="PerformerName" class="form-label">Performer Name</label>
+              <input type="text"  class="form-control" id="PerformerName" value=@Model?.Project?.PerformerName>
+            </div>
+            <div class="col-8">
+              <label for="Teamlead" class="form-label">Teamlead</label>
+              <input type="text" class="form-control" id="Teamlead">
+            </div>
+            <div class="col-4">
+              <label for="Priority" class="form-label">Priority</label>
+              <input type="text" class="form-control" id="Priority" value=@Model?.Project?.Priority>
+            </div>
+            <div class="col-md-6">
+              <label for="StartDate" class="form-label">Start Date</label>
+              <input type="text"  class="form-control" id="StartDate" value=@Model?.Project?.Start.ToShortDateString()>
+            </div>
+            <div class="col-md-12">
+              <label for="Id" class="form-label">Id</label>
+              <input type="text" class="form-control" id="Id" value=@Model?.Project?.Id>
+            </div>
+            <div class="col-md-6">
+              <label for="FinishDate" class="form-label">Finish Date</label>
+              <input type="text"  class="form-control" id="FinishDate" value=@Model?.Project?.Finish.ToShortDateString()>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-light w-100" asp-page-handler="SaveChanges">Save changes</button>
+            </div>
+            <div class="col-12">
+              <label for="Employees" class="form-label">Employees</label>
+              <div class="overflow-auto" style="max-height: 30vh;" id="Employees">
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+                <button type="submit" class="btn btn-light w-100">1adf</button>
+              </div>
+            </div>
+          </form>
+    </div>
+</div>

@@ -7,5 +7,7 @@ namespace ProjectsTracker.BLL.Interfaces {
         Task DeleteProjectAsync(int? id);
         Task AddOrEditProjectAsync(ProjectDTO project);
         Task AppointTeamleadAsync (int? projectId, int? employeeId);
+        Task TieEmployeeProjectAsync(int? projectId, int? employeeId);
+        Task SeparateEmployeeProjectAsync(int? projectId, int? employeeId);
     }
 }

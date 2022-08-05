@@ -7,7 +7,7 @@ namespace ProjectsTracker.BLL.DataTransferObjects {
         public string? MidleName { get; set; } = null!;
         public string? LastName { get; set; } = null!;
         public string? Email { get; set; } = null!;
-        public List<Project>? Projects { get; set; } = new();
-        public List<Project>? ProjectsAsLead { get; set; } = new();
+        public List<ProjectDTO>? Projects { get; set; } = new();
+        public List<ProjectDTO>? ProjectsAsLead { get; set; } = new();
     }
 }
