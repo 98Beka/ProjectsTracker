@@ -12,11 +12,9 @@ namespace ProjectsTracker.PL.Pages {
         private readonly IProjectService _projectService;
         private readonly IMapper _mapperToView;
         private readonly IMapper _mapperToDTO;
-        [BindProperty]
         public  List<ProjectView>? Projects { get; set; }
 
-        [BindProperty]
-        public ProjectView? Project { get; set; }
+        public ProjectView? Project { get; set; } = default!;
 
         public IndexModel(ILogger<IndexModel> logger, IProjectService projectService) {
             _logger = logger;
@@ -29,16 +27,20 @@ namespace ProjectsTracker.PL.Pages {
 
         
 
-        public void OnGet() {
+        public void OnGet(int id) {
+            Project = Projects[id];
         }
 
         public  void OnPostShow(int id) {
-
+            if(Projects != null)
+                Project = Projects[id];
         }
 
         public async Task<IActionResult> OnPostSaveChangesAsync() {
             if (!ModelState.IsValid)
                 return Page();
+            Project.Name = "ivan";
+           
             await _projectService.AddOrEditProjectAsync(_mapperToDTO.Map<ProjectDTO>(Project));
             return Page();
         }
