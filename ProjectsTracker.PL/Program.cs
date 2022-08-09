@@ -1,13 +1,25 @@
 using ProjectsTracker.BLL.Interfaces;
 using ProjectsTracker.BLL.Services;
+using AutoMapper;
+using ProjectsTracker.BLL.Profiles;
+using ProjectsTracker.PL;
+using ProjectsTracker.PL.Abstracs;
+using ProjectsTracker.BLL.BusinessObjects;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
-builder.Services.AddTransient<IProjectService, ProjectService>(
+
+builder.Services.AddSingleton<IProjectService, ProjectService>(
     s => new ProjectService(connectionString));
-builder.Services.AddTransient<IEmployeeService, EmployeeService>(
+builder.Services.AddSingleton<IEmployeeService, EmployeeService>(
     s => new EmployeeService(connectionString));
+builder.Services.AddSingleton<FilterContainer<IProjectFilter>, ProjectFilterContainer>(f => new ProjectFilterContainer { Filter = new ProjectFilterNone()});
+builder.Services.AddSingleton<IMapper, IMapper>(
+    m => new MapperConfiguration(c => {
+        c.AddProfile<ProjectMapperConfig>();
+        c.AddProfile<EmployeeMapperConfig>();
+    }).CreateMapper());
 
 // Add services to the container.
 builder.Services.AddRazorPages();

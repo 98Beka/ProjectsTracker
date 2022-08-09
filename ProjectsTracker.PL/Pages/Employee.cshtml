@@ -1,0 +1,100 @@
+﻿@page
+@model ProjectsTracker.PL.Pages.EmployeeModel
+
+<a href="@Url.Content("~/Index")">open projects page</a>
+<div class="row">
+    <div class="col-6 py-2">
+        <form method="post">
+            <button class="w-100 mb-2" asp-page-handler="addEmployee">add employee</button>
+        </form>
+        <div class="btn sticky-top w-100 btn-light">
+            <div class="row row-cols-1 row-cols-sm-3">
+                <div class="col">Name</div>
+                <div class="col">Priority</div>
+                <div class="col">Start date</div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 overflow-auto" style="height: 80vh;">
+            <form method="post">
+                <ul class="list-group">
+                @{
+                    int i = 0;
+                    if(Model.Employees != null)
+                        foreach(var item in Model.Employees)
+                        {
+                                <li class="list-group-item  @(Model.Employee.Id == item.Id ? "active" : "")">
+                                    <button class="list-group-item btn p-3 w-100" asp-page-handler="show" asp-route-i=@i>
+                                        <div class="row row-cols-1 row-cols-sm-3">
+                                            <div class="col">@item?.Name</div>
+                                            <div class="col">@item?.LastName</div>
+                                            <div class="col">@item?.Email</div>
+                                        </div>
+                                    </button>
+                                </li>
+                            i++;
+                        }
+                }
+                </ul>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-6 py-2 ">
+
+        <form class="row g-3" method="post">
+            <div class="col-sm-6">
+              <label for="EmployeeName" class="form-label">Employee name</label>
+              <input type="text" asp-for="Employee.Name" class="form-control" id="EmployeeName" value=@Model.Employee?.Name>
+            </div>
+            <div class="col-sm-6">
+              <label for="MiddleName" class="form-label">middle name</label>
+              <input type="text" asp-for="Employee.MiddleName" class="form-control" id="MiddleName" value=@Model.Employee?.MiddleName>
+            </div>
+            <div class="col-sm-6">
+              <label for="LastName" class="form-label">last name</label>
+              <input type="text" asp-for="Employee.LastName" class="form-control" id="LastName" value=@Model.Employee?.LastName>
+            </div>
+            <div class="col-6">
+              <label for="Email" class="form-label">email</label>
+              <input type="email" asp-for="Employee.Email" class="form-control" id="Email" value=@Model.Employee?.Email>
+            </div>
+            <div class="col-12"></div>
+            <div class="col-12"></div>
+            <div class="col-sm-9 mt-3">
+              <button type="submit" class="btn btn-light w-100" asp-page-handler="SaveChanges" asp-route-id="@Model.Employee?.Id">save changes</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="submit" class="btn btn-light w-100" asp-page-handler="RemoveEmployee" asp-route-id="@Model.Employee?.Id">remove</button>
+            </div>
+            <div class="col-12"></div>
+             <div class="col-12 d-none d-sm-block">
+                <label for="Projects" class="form-label">projects</label>
+                <div class="overflow-auto" style="height: 35vh;" id="Projects">
+                        <ul class="list-group">
+                        @{
+                            int j = 1;
+                            if(Model.Employees != null)
+                                foreach(var item in Model.Employee.Projects)
+                                {
+                                    <li class="list-group-item">
+                                        <div class="row row-cols-1 row-cols-sm-4">
+                                            <div class="col-2">
+                                               @j
+                                            </div>
+                                            <div class="col-4">
+                                                @item?.Name
+                                            </div>
+                                            <div class="col-3">@item?.Start</div>
+                                            <div class="col-3">@item?.Priority</div>
+                                        </div>
+                                    </li>
+                                    j++;
+                                }
+                        }
+                        </ul>
+                </div>
+          </form>
+    </div>
+</div>

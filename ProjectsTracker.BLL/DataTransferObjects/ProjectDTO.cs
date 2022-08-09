@@ -1,9 +1,7 @@
-﻿using ProjectsTracker.DAL.Models;
-
-namespace ProjectsTracker.BLL.DataTransferObjects {
+﻿namespace ProjectsTracker.BLL.DataTransferObjects {
     public class ProjectDTO {
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
+        public string? Name { get; set; } = null!;
         public string? CustomerName { get; set; } = null!;
         public string? PerformerName { get; set; } = null!;
         public List<EmployeeDTO>? Employees { get; set; } = new();

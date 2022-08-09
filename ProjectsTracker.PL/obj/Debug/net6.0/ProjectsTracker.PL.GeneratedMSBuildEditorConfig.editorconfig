@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\asp_projects\ProjectsTracker\ProjectsTracker.PL
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/asp_projects/ProjectsTracker/ProjectsTracker.PL/Pages/Employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/asp_projects/ProjectsTracker/ProjectsTracker.PL/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

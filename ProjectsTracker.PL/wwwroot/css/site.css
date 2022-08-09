@@ -1,0 +1,7 @@
+.checkButton {
+    width: 15px;
+    height: 15px;
+    padding: 0px;
+    box-sizing: border-box;
+    border-block-color: lightgray;
+}

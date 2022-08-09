@@ -18,8 +18,8 @@ namespace ProjectsTracker.DAL.Repository {
             return await db.Employees.Include(e => e.Projects).FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task Create(Employee employee) {
-            await db.Employees.AddAsync(employee);
+        public async Task<Employee> Create(Employee employee) {
+            return (await db.Employees.AddAsync(employee)).Entity;
         }
 
         public void Update(Employee employee) {

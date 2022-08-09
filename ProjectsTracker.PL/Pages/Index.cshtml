@@ -1,87 +1,134 @@
-﻿@page "{id:int}"
+﻿@page
 @using ProjectsTracker.PL.ViewModels
 @model ProjectsTracker.PL.Pages.IndexModel
 
 
-
+<a href="@Url.Content("~/Employee")">open employees page</a>
 <div class="row">
-    <div class="col-6 py-3">
-        <div class="d-grid gap-2 overflow-auto" style="max-height: 90vh;">
+    <div class="col-6 py-2">
+        <form method="post">
+            <div class="row row-cols-1 row-cols-sm-2">
+                <div class="col">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        filtrate
+                      </button>
+                      <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+                            <li><button class="dropdown-item" type="submit" asp-page-handler="filtrate" asp-route-filter=1 >filtrate by priority</button></li>
+                            <li><button class="dropdown-item" type="submit" asp-page-handler="filtrate" asp-route-filter=2 >filtrate by start date</button></li>
+                            <li><button class="dropdown-item" type="submit" asp-page-handler="filtrate" asp-route-filter=3 >no filtrate</button></li>
+                      </ul>
+                    </div>
+                    </div>
+                <div class="col">
+                    <button class="btn w-100 mb-2 border border-primary" asp-page-handler="addProject">add project</button>
+                </div>
+            </div>
+        </form>
+        <div class="btn w-100 btn-light">
+            <div class="row row-cols-1 row-cols-sm-3">
+                <div class="col">Name</div>
+                <div class="col">Priority</div>
+                <div class="col">Start date</div>
+            </div>
+        </div>
 
-            <botton class="btn btn-light m-3">Filtr</botton>
+        <div class="d-grid gap-2 overflow-auto" style="max-height: 80vh;">
+            <ul class="list-group">
             <form method="post">
-                @{
-                    int i = 0;
-                    if(Model.Projects != null)
-                        foreach(var item in Model.Projects)
-                        {
-                                    <button class="btn btn-outline-primary p-3 w-100" asp-page-handler="show" asp-route-id=@i>
-                                        <div class="row row-cols-1 row-cols-lg-3">
-                                            <div class="col">@item?.Name</div>
-                                            <div class="col">@item?.Priority</div>
-                                            <div class="col">@item?.Start</div>
-                                            <div class="col">@item?.Id</div>
-                                        </div>
-                                </button>
-                            i++;
-                        }
+           @{
+                if (Model.Projects != null) {
+                    foreach (var item in Model.Projects) {
+                            <li class="list-group-item @(Model.Project.Id == item.Id ? "active" : "")" >
+                            <button class="list-group-item btn p-3 w-100" asp-page-handler="show" asp-route-id=@item.Id>
+                                <div class="row row-cols-1 row-cols-sm-3">
+                                    <div class="col">@item?.Name</div>
+                                    <div class="col">@item?.Priority</div>
+                                    <div class="col">@item?.Start</div>
+                                </div>
+                            </button>
+                            </li>
+                    }
                 }
+            }
             </form>
-
+            </ul>
         </div>
     </div>
 
-    <div class="col-6 py-3 ">
+    <div class="col-6 py-2 ">
 
-        <form class="row g-3 overflow-auto" method="post" style="max-height: 90vh;">
-            <div class="col-lg-4">
-              <label for="ProjectName" class="form-label">Project Name</label>
-              <input type="text" asp-for="Project.Name" class="form-control" id="ProjectName" value=@Model?.Project?.Name>
+        <form class="row g-3" method="post">
+            <div class="col-sm-6">
+                <label for="ProjectName" class="form-label">project name</label>
+                <input type="text" asp-for="Project.Name" class="form-control" id="ProjectName" value=@Model.Project?.Name>
             </div>
-            <div class="col-lg-4">
-              <label for="CustomerName" class="form-label">Customer Name</label>
-              <input type="text" asp-for="Project.CustomerName" class="form-control" id="CustomerName" value=@Model.?Project?.CustomerName>
+            <div class="col-sm-6">
+                <label for="CustomerName" class="form-label">customer name</label>
+                <input type="text" asp-for="Project.CustomerName" class="form-control" id="CustomerName" value=@Model.Project?.CustomerName>
             </div>
-            <div class="col-lg-4">
-              <label for="PerformerName" class="form-label">Performer Name</label>
-              <input type="text" asp-for="Project.PerformerName" class="form-control" id="PerformerName" value=@Model?.Project?.PerformerName>
+            <div class="col-sm-6">
+                <label for="PerformerName" class="form-label">performer name</label>
+                <input type="text" asp-for="Project.PerformerName" class="form-control" id="PerformerName" value=@Model.Project?.PerformerName>
             </div>
-            <div class="col-8">
-              <label for="Teamlead" class="form-label">Teamlead</label>
-              <input type="text" class="form-control" id="Teamlead">
+            <div class="col-6">
+                <label for="Priority" class="form-label">priority</label>
+                <input type="number" asp-for="Project.Priority" class="form-control" id="Priority" value=@Model.Project?.Priority>
             </div>
-            <div class="col-4">
-              <label for="Priority" class="form-label">Priority</label>
-              <input type="text" class="form-control" id="Priority" value=@Model?.Project?.Priority>
+            <div class="col-sm-6">
+                <label for="StartDate" class="form-label">start date</label>
+                <input type="text" asp-for="Project.Start" class="form-control" id="StartDate" value=@Model.Project?.Start.ToShortDateString()>
             </div>
-            <div class="col-md-6">
-              <label for="StartDate" class="form-label">Start Date</label>
-              <input type="text" asp-for="Project.Start" class="form-control" id="StartDate" value=@Model?.Project?.Start.ToShortDateString()>
+            <div class="col-sm-6">
+                <label for="FinishDate" class="form-label">finish date</label>
+                <input type="text" asp-for="Project.Finish" class="form-control" id="FinishDate" value=@Model.Project?.Finish.ToShortDateString()>
             </div>
-            <div class="col-md-12">
-              <label for="Id" class="form-label">Id</label>
-              <input type="text" class="form-control" id="Id" value=@Model?.Project?.Id>
+            <div class="col-sm-9">
+                <button type="submit" class="btn btn-light w-100" asp-page-handler="SaveChanges" asp-route-id="@Model.Project?.Id">save changes</button>
+            </div>            
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-light w-100" asp-page-handler="RemoveProject" asp-route-id="@Model.Project?.Id">remove</button>
             </div>
-            <div class="col-md-6">
-              <label for="FinishDate" class="form-label">Finish Date</label>
-              <input type="text" asp-for="Project.Finish" class="form-control" id="FinishDate" value=@Model?.Project?.Finish.ToShortDateString()>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-light w-100" asp-page-handler="SaveChanges">Save changes</button>
-            </div>
-            <div class="col-12">
-              <label for="Employees" class="form-label">Employees</label>
-              <div class="overflow-auto" style="max-height: 30vh;" id="Employees">
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-                <button type="submit" class="btn btn-light w-100">1adf</button>
-              </div>
-            </div>
+            <div class="col-12 d-none d-sm-block">
+                <label for="Employees" class="form-label">all employees</label>
+                <div class="overflow-auto" style="height: 35vh;" id="Employees">
+                        <ul class="list-group">
+                        @{
+                            int j = 1;
+                            if(Model.Employees != null)
+                                foreach(var item in Model.Employees)
+                                {
+                                    string buttonclass = String.Empty;
+                                    if(Model.Project.Employees.FirstOrDefault(e => e.Id == item.Id) != null)
+                                        buttonclass = "btn-primary";
+
+                                                <li class="list-group-item">
+                                                    <div class="row row-cols-1 row-cols-sm-4">
+                                                        <div class="col-2">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    <button type="submit" class="checkButton @buttonclass" asp-page-handler="BindEmployee" asp-route-id=@item.Id asp-route-projectId=@Model.Project.Id>
+                                                                    <a href="#"></a>
+                                                                    </button>                                                
+                                                                </div>
+                                                                <div class="col-10">
+                                                                    @j
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            @item?.Name
+                                                        </div>
+                                                        <div class="col-3">@item?.LastName</div>
+                                                        <div class="col-3">@item?.Email</div>
+                                                    </div>
+                                                </li>
+                                    j++;
+                                }
+                        }
+                        </ul>
+                </div>
+            </div>          
           </form>
     </div>
 </div>
