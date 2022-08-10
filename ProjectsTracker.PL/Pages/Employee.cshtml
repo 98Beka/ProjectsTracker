@@ -78,7 +78,7 @@
                             if(Model.Employees != null)
                                 foreach(var item in Model.Employee.Projects)
                                 {
-                                    <li class="list-group-item">
+                                    <li class="list-group-item @(Model.Employee.ProjectsAsLead.FirstOrDefault(p => p.Id == item.Id) != null ? "bg-danger" : "")">
                                         <div class="row row-cols-1 row-cols-sm-4">
                                             <div class="col-2">
                                                @j

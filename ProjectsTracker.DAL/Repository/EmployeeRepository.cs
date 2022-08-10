@@ -11,11 +11,11 @@ namespace ProjectsTracker.DAL.Repository {
         }
 
         public IEnumerable<Employee> GetAll() {
-            return db.Employees.Include(e => e.Projects);
+            return db.Employees.Include(e => e.Projects).Include(p => p.ProjectsAsLead);
         }
 
         public async Task<Employee> Get(int id) {
-            return await db.Employees.Include(e => e.Projects).FirstOrDefaultAsync(e => e.Id == id);
+            return await db.Employees.Include(e => e.Projects).Include(p => p.ProjectsAsLead).FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public async Task<Employee> Create(Employee employee) {
@@ -27,7 +27,7 @@ namespace ProjectsTracker.DAL.Repository {
         }
 
         public IEnumerable<Employee> Find(Func<Employee, Boolean> predicate) {
-            return db.Employees.Where(predicate).ToList();
+            return db.Employees.Include(e => e.Projects).Include(p => p.ProjectsAsLead).Where(predicate).ToList();
         }
 
         public void Delete(int id) {

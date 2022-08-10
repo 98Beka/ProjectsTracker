@@ -101,5 +101,13 @@ namespace ProjectsTracker.PL.Pages {
             Response.Redirect($"/?id={projectId}&handler=show");
             return Page();
         }
+
+        public async Task<IActionResult> OnPostBindTeamleadAsync(int id, int projectId) {
+            Project = Projects.FirstOrDefault(p => p.Id == projectId);
+            await _projectService.TieEmployeeProjectAsync(projectId, id);
+            await _projectService.AppointTeamleadAsync(projectId, id);
+            Response.Redirect($"/?id={projectId}&handler=show");
+            return Page();
+        }
     }
 }

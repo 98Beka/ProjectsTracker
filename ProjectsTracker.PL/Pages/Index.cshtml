@@ -13,11 +13,11 @@
                       <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         filtrate
                       </button>
-                      <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
                             <li><button class="dropdown-item" type="submit" asp-page-handler="filtrate" asp-route-filter=1 >filtrate by priority</button></li>
                             <li><button class="dropdown-item" type="submit" asp-page-handler="filtrate" asp-route-filter=2 >filtrate by start date</button></li>
                             <li><button class="dropdown-item" type="submit" asp-page-handler="filtrate" asp-route-filter=3 >no filtrate</button></li>
-                      </ul>
+                        </ul>
                     </div>
                     </div>
                 <div class="col">
@@ -98,21 +98,27 @@
                             if(Model.Employees != null)
                                 foreach(var item in Model.Employees)
                                 {
-                                    string buttonclass = String.Empty;
-                                    if(Model.Project.Employees.FirstOrDefault(e => e.Id == item.Id) != null)
-                                        buttonclass = "btn-primary";
+                                    string EmployeeButtonclass = String.Empty;
+                                    string TeamleadButtonclass = String.Empty;
+                                    if(Model.Project?.Employees?.FirstOrDefault(e => e.Id == item.Id) != null)
+                                        EmployeeButtonclass = "bg-primary";
+                                    if(Model.Project?.TeamLead?.Id == item.Id)
+                                        TeamleadButtonclass = "bg-danger";
 
                                                 <li class="list-group-item">
                                                     <div class="row row-cols-1 row-cols-sm-4">
                                                         <div class="col-2">
                                                             <div class="row">
-                                                                <div class="col-2">
-                                                                    <button type="submit" class="checkButton @buttonclass" asp-page-handler="BindEmployee" asp-route-id=@item.Id asp-route-projectId=@Model.Project.Id>
-                                                                    <a href="#"></a>
+                                                                <div class="col">
+                                                                    @j
+                                                                </div>
+                                                                <div class="col">
+                                                                    <button type="submit" class="checkButton @EmployeeButtonclass" asp-page-handler="BindEmployee" asp-route-id=@item.Id asp-route-projectId=@Model.Project.Id>
                                                                     </button>                                                
                                                                 </div>
-                                                                <div class="col-10">
-                                                                    @j
+                                                                <div class="col">
+                                                                    <button type="submit" class="checkButton @TeamleadButtonclass" asp-page-handler="BindTeamlead" asp-route-id=@item.Id asp-route-projectId=@Model.Project.Id>
+                                                                    </button>                                                
                                                                 </div>
                                                             </div>
                                                         </div>

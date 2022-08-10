@@ -10,12 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 
-builder.Services.AddSingleton<IProjectService, ProjectService>(
+builder.Services.AddTransient<IProjectService, ProjectService>(
     s => new ProjectService(connectionString));
-builder.Services.AddSingleton<IEmployeeService, EmployeeService>(
+builder.Services.AddTransient<IEmployeeService, EmployeeService>(
     s => new EmployeeService(connectionString));
 builder.Services.AddSingleton<FilterContainer<IProjectFilter>, ProjectFilterContainer>(f => new ProjectFilterContainer { Filter = new ProjectFilterNone()});
-builder.Services.AddSingleton<IMapper, IMapper>(
+builder.Services.AddTransient<IMapper, IMapper>(
     m => new MapperConfiguration(c => {
         c.AddProfile<ProjectMapperConfig>();
         c.AddProfile<EmployeeMapperConfig>();
