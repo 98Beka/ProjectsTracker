@@ -25,7 +25,7 @@
                 </div>
             </div>
         </form>
-        <div class="btn w-100 btn-light">
+        <div class="w-100 bg-light">
             <div class="row row-cols-1 row-cols-sm-3">
                 <div class="col">Name</div>
                 <div class="col">Priority</div>
@@ -89,9 +89,26 @@
             <div class="col-sm-3">
                 <button type="submit" class="btn btn-light w-100" asp-page-handler="RemoveProject" asp-route-id="@Model.Project?.Id">remove</button>
             </div>
-            <div class="col-12 d-none d-sm-block">
+            <div class="col-12 d-none d-lg-block">
                 <label for="Employees" class="form-label">all employees</label>
                 <div class="overflow-auto" style="height: 35vh;" id="Employees">
+                    <div class="w-100 bg-light">
+                        <div class="row row-cols-sm-4">
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        empl
+                                    </div>
+                                    <div class="col text-center">
+                                        lead
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 text-center">Name</div>
+                            <div class="col-3 text-center">last name</div>
+                            <div class="col-3 text-center">eamil</div>
+                        </div>
+                    </div>
                         <ul class="list-group">
                         @{
                             int j = 1;
@@ -104,25 +121,25 @@
                                         EmployeeButtonclass = "bg-primary";
                                     if(Model.Project?.TeamLead?.Id == item.Id)
                                         TeamleadButtonclass = "bg-danger";
-
+                                            
                                                 <li class="list-group-item">
                                                     <div class="row row-cols-1 row-cols-sm-4">
-                                                        <div class="col-2">
+                                                        <div class="col-3">
                                                             <div class="row">
-                                                                <div class="col">
+                                                                <div class="col-1">
                                                                     @j
                                                                 </div>
                                                                 <div class="col">
-                                                                    <button type="submit" class="checkButton @EmployeeButtonclass" asp-page-handler="BindEmployee" asp-route-id=@item.Id asp-route-projectId=@Model.Project.Id>
+                                                                    <button type="submit" class="checkButton @EmployeeButtonclass" asp-page-handler="BindEmployee" asp-route-id=@item.Id asp-route-projectId=@Model.?Project?.Id>
                                                                     </button>                                                
                                                                 </div>
                                                                 <div class="col">
-                                                                    <button type="submit" class="checkButton @TeamleadButtonclass" asp-page-handler="BindTeamlead" asp-route-id=@item.Id asp-route-projectId=@Model.Project.Id>
+                                                                    <button type="submit" class="checkButton @TeamleadButtonclass" asp-page-handler="BindTeamlead" asp-route-id=@item.Id asp-route-projectId=@Model.?Project?.Id>
                                                                     </button>                                                
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
+                                                        <div class="col-3">
                                                             @item?.Name
                                                         </div>
                                                         <div class="col-3">@item?.LastName</div>

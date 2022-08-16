@@ -73,7 +73,7 @@ namespace ProjectsTracker.BLL.Services {
             var employee = await _database.Employees.Get(employeeId);
             if (employee == null)
                 throw new ValidationException("employee is not found", "");
-            if(project.Employees.FirstOrDefault(e => e.Id == employeeId) == null)
+            if(project.Employees?.FirstOrDefault(e => e.Id == employeeId) == null)
                 project.Employees?.Add(employee);
             _database.Save();
         }        

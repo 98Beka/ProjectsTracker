@@ -45,7 +45,7 @@ namespace ProjectsTracker.PL.Pages {
 
 
         public async Task<IActionResult> OnPostSaveChangesAsync(int id) {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || Project == null || id == 0)
                 return Page();
             var olProj = await _projectService.GetProjectAsync(id);
             Project.Id = id;
@@ -64,6 +64,8 @@ namespace ProjectsTracker.PL.Pages {
         }
 
         public async Task<IActionResult> OnPostRemoveProjectAsync(int id) {
+            if (!ModelState.IsValid || Project == null || id == 0)
+                return Page();
             await _projectService.DeleteProjectAsync(id);
             Projects = _mapper.Map<List<ProjectView>>(_projectService.GetProjects(_filterContainer.Filter));
             return Page();

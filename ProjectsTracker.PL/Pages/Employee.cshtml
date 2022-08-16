@@ -42,7 +42,6 @@
     </div>
 
     <div class="col-6 py-2 ">
-
         <form class="row g-3" method="post">
             <div class="col-sm-6">
               <label for="EmployeeName" class="form-label">Employee name</label>
@@ -75,7 +74,7 @@
                         <ul class="list-group">
                         @{
                             int j = 1;
-                            if(Model.Employees != null)
+                            if(Model.Employees != null && Model.Employee?.Projects != null)
                                 foreach(var item in Model.Employee.Projects)
                                 {
                                     <li class="list-group-item @(Model.Employee.ProjectsAsLead.FirstOrDefault(p => p.Id == item.Id) != null ? "bg-danger" : "")">

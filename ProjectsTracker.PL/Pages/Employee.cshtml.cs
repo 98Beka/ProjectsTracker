@@ -34,7 +34,7 @@ namespace ProjectsTracker.PL.Pages
         }
 
         public async Task<IActionResult> OnPostSaveChangesAsync(int id) {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || Employee == null || id == 0)
                 return Page();
             var oldEmployee = await _employeeService.GetEmployeeAsync(id);
             Employee.Id = id;
@@ -53,6 +53,8 @@ namespace ProjectsTracker.PL.Pages
         }
 
         public async Task<IActionResult> OnPostRemoveEmployee(int id) {
+            if (!ModelState.IsValid || Employee == null || id == 0)
+                return Page();
             await _employeeService.DeleteEmployeeAsync(id);
             Employees = _mapper.Map<List<EmployeeView>>(_employeeService.GetEmployees());
             return Page();
